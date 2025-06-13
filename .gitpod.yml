@@ -1,0 +1,11 @@
+tasks:
+  - init: |
+      cd client && npm install
+      cd ../server && npm install
+    command: |
+      cd server && npm start & cd ../client && npm run dev
+ports:
+  - port: 3000
+    onOpen: open-browser
+  - port: 5173
+    onOpen: open-browser
